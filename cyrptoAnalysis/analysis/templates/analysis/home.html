@@ -30,10 +30,13 @@
     </style>
   </head>
   <body>
+    <h1 class="text-center p-5 bg-success text-dark font-monospace fw-bold">
+      Market Analysis of BTC Cyrpto.
+    </h1>
 
-    <h1 class="text-center p-5 bg-success text-dark font-monospace fw-bold">Market Analysis of BTC Cyrpto.</h1>
-
-    <h3 class="text-center mt-4 text-primary font-monospace fw-bold">Market analysis in last week.</h3>
+    <h3 class="text-center mt-4 text-primary font-monospace fw-bold">
+      Market analysis in last week.
+    </h3>
 
     <div class="overflow-auto mt-4 mb-5">
       <table class="mx-auto">
@@ -52,13 +55,13 @@
           {% for i in data1 %}
           <tr>
             {% if forloop.counter <= 7 %}
-            <td style="background-color:white; color:black;">{{i.d}}</td>
+            <td style="background-color: white; color: black">{{i.d}}</td>
             <td>{{i.v}}</td>
             <td>{{i.m}}</td>
-            <td style="background-color:#ffdd00;">{{i.o}}</td>
-            <td style="background-color:#a40606;">{{i.c}}</td>
-            <td style="background-color:#009ffd;">{{i.l}}</td>
-            <td style="background-color:#20bf55;">{{i.h}}</td>
+            <td style="background-color: #ffdd00">{{i.o}}</td>
+            <td style="background-color: #a40606">{{i.c}}</td>
+            <td style="background-color: #009ffd">{{i.l}}</td>
+            <td style="background-color: #20bf55">{{i.h}}</td>
             {% endif %}
           </tr>
           {% endfor %}
@@ -69,50 +72,53 @@
     <hr />
 
     <div class="row mx-auto">
-
       <div class="col-12 col-sm-12 col-md-6">
-
         <div>
-          <h5 class="text-center text-primary font-monospace fw-bold mx-5">Market open analysis in past few days</h5>
+          <h5 class="text-center text-primary font-monospace fw-bold mx-5">
+            Market open analysis in past few days
+          </h5>
           <canvas class="p-3" id="myCharto"></canvas>
         </div>
 
         <hr />
 
         <div>
-          <h5 class="text-center text-primary font-monospace fw-bold mx-5">Market close analysis in past few days</h5>
+          <h5 class="text-center text-primary font-monospace fw-bold mx-5">
+            Market close analysis in past few days
+          </h5>
           <canvas class="p-3" id="myChartc"></canvas>
         </div>
 
         <hr />
-
       </div>
 
       <div class="col-12 col-sm-12 col-md-6">
-
         <div>
-          <h5 class="text-center text-primary font-monospace fw-bold mx-5">Market low analysis in last few days</h5>
+          <h5 class="text-center text-primary font-monospace fw-bold mx-5">
+            Market low analysis in last few days
+          </h5>
           <canvas class="p-3" id="myChartl"></canvas>
         </div>
 
         <hr />
-        
+
         <div>
-          <h5 class="text-center text-primary font-monospace fw-bold mx-5">Market high analysis in last few days</h5>
+          <h5 class="text-center text-primary font-monospace fw-bold mx-5">
+            Market high analysis in last few days
+          </h5>
           <canvas class="p-3" id="myCharth"></canvas>
         </div>
 
         <hr />
-
       </div>
-
     </div>
 
     <div class="row mx-auto">
-
       <div class="col-12 col-sm-12 col-md-6">
         <div>
-          <h5 class="text-center text-primary font-monospace fw-bold mx-5">Market analysis of min of data</h5>
+          <h5 class="text-center text-primary font-monospace fw-bold mx-5">
+            Market analysis of min of data
+          </h5>
           <canvas class="p-3" id="myChart-bmin"></canvas>
         </div>
         <hr />
@@ -120,17 +126,20 @@
 
       <div class="col-12 col-sm-12 col-md-6">
         <div>
-          <h5 class="text-center text-primary font-monospace fw-bold mx-5">Market analysis of max of data</h5>
+          <h5 class="text-center text-primary font-monospace fw-bold mx-5">
+            Market analysis of max of data
+          </h5>
           <canvas class="p-3" id="myChart-bmax"></canvas>
         </div>
         <hr />
       </div>
-
     </div>
 
     <div class="row mx-auto">
       <div>
-        <h5 class="text-center text-primary font-monospace fw-bold mx-5">Market analysis in past few days</h5>
+        <h5 class="text-center text-primary font-monospace fw-bold mx-5">
+          Market analysis in past few days
+        </h5>
         <canvas class="p-3" id="myChartoclh"></canvas>
       </div>
     </div>
@@ -157,6 +166,9 @@
           }
         }
       }
+
+      minValues = [Math.min(...oValues), Math.min(...cValues), Math.min(...lValues), Math.min(...hValues)];
+      maxValues = [Math.max(...oValues), Math.max(...cValues), Math.max(...lValues), Math.max(...hValues)];
 
       new Chart("myCharto", {
         type: "line",
@@ -271,11 +283,22 @@
         },
         options: {
           legend: { display: false },
+          elements: {
+            point:{
+                radius: 0
+            }
+          },
+          scales: {
+            y: {
+                beginAtZero: false,
+                min: Math.min(...minValues),
+                ticks: {
+                  stepSize: 100000
+                }
+                }
+            }
         },
       });
-
-      minValues = [Math.min(...oValues), Math.min(...cValues), Math.min(...lValues), Math.min(...hValues)];
-      maxValues = [Math.max(...oValues), Math.max(...cValues), Math.max(...lValues), Math.max(...hValues)];
 
       var barColors = ["#ffdd00","#a40606","#009ffd","#20bf55"];
       var labels = ["open","close","low","high"]
@@ -327,6 +350,5 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-
   </body>
 </html>
