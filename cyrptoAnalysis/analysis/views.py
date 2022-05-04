@@ -16,6 +16,7 @@ def home(request):
 
     # with open('data.json', 'w') as jsonfile:
     #     json.dump(response, jsonfile)
+    
     f = open('data.json')
     response = json.load(f)
 
@@ -56,6 +57,7 @@ def home(request):
             mcap = tseries[i]["6. market cap (USD)"]
             date = i
             dataset.append(dict({'o':openINR,'h':highINR,'l':lowINR,'c':closeINR,'v':vol,'m':mcap,'d':date}))
+    dataset.reverse()        
     dataset = json.dumps(dataset)   
     datasetDJ = json.loads(dataset) 
 
