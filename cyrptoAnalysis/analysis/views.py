@@ -28,6 +28,16 @@ def home(request):
     lrf = meta["6. Last Refreshed"]
     tz = meta["7. Time Zone"]
 
+    dataInfo = {
+        "info":info,
+        "dcc":dcc,
+        "dcn":dcn,
+        "mc":mc,
+        "mn":mn,
+        "lrf":lrf,
+        "tz":tz
+    }
+
     tseries = response["Time Series (Digital Currency Daily)"]
     count = 0
     dataset = []
@@ -51,5 +61,5 @@ def home(request):
 
     # print(dataset)             
     # return HttpResponse(dataset)
-    return render(request,'analysis/home.html',{'data':dataset,'data1':datasetDJ})
+    return render(request,'analysis/home.html',{'data':dataset,'data1':datasetDJ,'info':dataInfo})
  

@@ -15,7 +15,7 @@
       table,
       th,
       td {
-        border: 1px solid blue;
+        border: 2px solid blue;
         border-collapse: collapse;
         padding: 10px;
         text-align: center;
@@ -34,12 +34,28 @@
       Market Analysis of BTC Cyrpto.
     </h1>
 
+    <div class="mx-auto row mt-4 p-4 bg-info" style="max-width:800px;">
+      <p class="text-center">{{info.info}}</p>
+      <hr>
+      <div class="col text-start">
+        <p>Currency Code : {{info.dcc}}</p>
+        <p>Currency Name : {{info.dcn}}</p>
+        <p>Market Code : {{info.mc}}</p>
+        <p>Market Name : {{info.mn}}</p>
+        <p>Time Zone : {{info.tz}}</p>
+        <p>Last Refreshed : {{info.lrf}}</p>
+      </div>
+      <div class="col text-end d-none d-sm-none d-md-block">
+       
+      </div>
+    </div>
+
     <h3 class="text-center mt-4 text-primary font-monospace fw-bold">
       Market analysis in last week.
     </h3>
 
     <div class="overflow-auto mt-4 mb-5">
-      <table class="mx-auto">
+      <table class="mx-auto w-100">
         <thead>
           <tr>
             <th>Date</th>
