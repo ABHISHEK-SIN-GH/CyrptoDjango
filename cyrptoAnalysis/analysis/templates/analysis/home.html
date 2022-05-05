@@ -100,7 +100,7 @@
           </tr>
         </thead>
         <tbody>
-          {% for i in data1 %}
+          {% for i in data1 reversed %}
           <tr>
             {% if forloop.counter <= 7 %}
             <td style="background-color: white; color: black">{{i.d}}</td>
