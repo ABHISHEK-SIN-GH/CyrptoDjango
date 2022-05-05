@@ -9,7 +9,7 @@ def home(request):
     # querystring = {"market":"INR","symbol":"BTC","function":"DIGITAL_CURRENCY_DAILY"}
     # headers = {
     #     "X-RapidAPI-Host": "alpha-vantage.p.rapidapi.com",
-    #     "X-RapidAPI-Key": "951c8f73ffmsh7c75e911dd0d131p179ca6jsn4a63e79cd0b3"
+    #     "X-RapidAPI-Key": "secret-key"
     # }
     # response = requests.request("GET", url, headers=headers, params=querystring)
     # response = response.json()
