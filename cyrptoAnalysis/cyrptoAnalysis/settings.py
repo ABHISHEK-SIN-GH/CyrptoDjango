@@ -4,7 +4,7 @@ import django_heroku
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-$eo-rykr%c!44mzmo0a(6e-#8@^5bwk+b#1#gk^+f$g9^-zzsn'
+SECRET_KEY = 'secret-key'
 
 DEBUG = False
 
