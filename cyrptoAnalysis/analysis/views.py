@@ -65,3 +65,5 @@ def home(request):
     # return HttpResponse(dataset)
     return render(request,'analysis/home.html',{'data':dataset,'data1':datasetDJ,'info':dataInfo})
  
+def new(request):
+    return render(request,'analysis/new.html',{})

@@ -4,6 +4,7 @@ minValues = [
   Math.min(...lValues),
   Math.min(...hValues),
 ];
+
 maxValues = [
   Math.max(...oValues),
   Math.max(...cValues),
@@ -235,6 +236,52 @@ new Chart("myChart-bmin", {
 });
 
 new Chart("myChart-bmax", {
+  type: "bar",
+  data: {
+    labels: labels,
+    datasets: [
+      {
+        backgroundColor: barColors,
+        data: maxValues,
+        label: "Analysis of data with maximum value",
+      },
+    ],
+  },
+  options: {
+    legend: { display: false },
+    scales: {
+      y: {
+        beginAtZero: false,
+        min: Math.min(...maxValues) - 100000,
+      },
+    },
+  },
+});
+
+new Chart("myChart-bminn", {
+  type: "bar",
+  data: {
+    labels: labels,
+    datasets: [
+      {
+        backgroundColor: barColors,
+        data: minValues,
+        label: "Analysis of data with minimum value",
+      },
+    ],
+  },
+  options: {
+    legend: { display: false },
+    scales: {
+      y: {
+        beginAtZero: false,
+        min: Math.min(...minValues) - 100000,
+      },
+    },
+  },
+});
+
+new Chart("myChart-bmaxx", {
   type: "bar",
   data: {
     labels: labels,

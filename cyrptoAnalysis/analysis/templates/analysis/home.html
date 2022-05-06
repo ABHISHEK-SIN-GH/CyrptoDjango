@@ -44,6 +44,7 @@
     </style>
   </head>
   <body>
+    
     {% load static %}
     <h1 class="text-center p-5 bg-success text-dark font-monospace fw-bold">
       Market Analysis of BTC Cyrpto.
@@ -116,9 +117,7 @@
         </tbody>
       </table>
     </div>
-
     <hr />
-
     <div class="row mx-auto">
       <div class="col-12 col-sm-12 col-md-6">
         <div>
@@ -127,16 +126,13 @@
           </h5>
           <canvas class="p-3" id="myCharto"></canvas>
         </div>
-
         <hr />
-
         <div>
           <h5 class="text-center text-primary font-monospace fw-bold mx-5">
             Market close analysis in past few days
           </h5>
           <canvas class="p-3" id="myChartc"></canvas>
         </div>
-
         <hr />
       </div>
 
@@ -147,16 +143,13 @@
           </h5>
           <canvas class="p-3" id="myChartl"></canvas>
         </div>
-
         <hr />
-
         <div>
           <h5 class="text-center text-primary font-monospace fw-bold mx-5">
             Market high analysis in last few days
           </h5>
           <canvas class="p-3" id="myCharth"></canvas>
         </div>
-
         <hr />
       </div>
     </div>
@@ -184,6 +177,29 @@
     </div>
 
     <div class="row mx-auto">
+      <div class="col-12 col-sm-12 col-md-6">
+        <div>
+          <h5 class="text-center text-primary font-monospace fw-bold mx-5">
+            Market analysis of min of data
+          </h5>
+          <canvas class="p-3" id="myChart-bminn"></canvas>
+        </div>
+        <hr />
+      </div>
+
+      <div class="col-12 col-sm-12 col-md-6">
+        <div>
+          <h5 class="text-center text-primary font-monospace fw-bold mx-5">
+            Market analysis of max of data
+          </h5>
+          <canvas class="p-3" id="myChart-bmaxx"></canvas>
+        </div>
+        <hr />
+      </div>
+    </div>
+
+
+    <div class="row mx-auto">
       <div>
         <h5 class="text-center text-primary font-monospace fw-bold mx-5">
           Market analysis in past few days
@@ -191,6 +207,7 @@
         <canvas class="p-3" id="myChartoclh"></canvas>
       </div>
     </div>
+
 
     <br />
 
@@ -314,8 +331,8 @@
       <!-- Copyright -->
     </footer>
     <!-- Footer -->
-
-    <script
+   
+      <script
       src="https://kit.fontawesome.com/7d0ddf9524.js"
       crossorigin="anonymous"
     ></script>
@@ -352,5 +369,6 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    
   </body>
 </html>
